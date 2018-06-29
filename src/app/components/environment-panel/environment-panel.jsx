@@ -4,6 +4,8 @@ import {bindActionCreators} from "redux"
 import {connect} from "react-redux"
 import moment from "moment"
 import electron from "electron"
+import { request } from 'graphql-request'
+import gql from 'graphql-tag'
 const {remote} = electron
 import fs from "fs"
 import {buildClientSchema} from 'graphql'
@@ -56,9 +58,7 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
                                 <option value="GET">GET</option>
                             </select>
                         </FormGroup>
-                        <FormGroup
-                            controlId="url"
-                        >
+                        <FormGroup controlId="url">
                             <ControlLabel>Url</ControlLabel>
                             <div className="UrlEditor">
                                 <div className="UrlEditorSection">
@@ -112,6 +112,34 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
                                 onChange={this.handleVariablesChange}
                             />
                         </FormGroup>
+                        <FormGroup controlId="8base">
+                            <ControlLabel>8base</ControlLabel>
+                            <div className="UrlEditor">
+                                <div className="UrlEditorSection">
+                                    <FormControl
+                                        ref="url"
+                                        type="text"
+                                        value={this.props.environment.get('email')}
+                                        placeholder="Enter an email"
+                                        onChange={this.handleEmailChange}
+                                    />
+                                </div>
+                                <div className="UrlEditorSection">
+                                    <FormControl
+                                        ref="url"
+                                        type="text"
+                                        value={this.props.environment.get('password')}
+                                        placeholder="Enter a password"
+                                        onChange={this.handlePasswordChange}
+                                    />
+                                </div>
+                                <div className="UrlEditorFooter">
+                                    <a href="javascript:void(0)" onClick={this.updateAuthorization}>
+                                        Refresh
+                                    </a>
+                                </div>
+                            </div>
+                        </FormGroup>
                         <FormGroup>
                             <ControlLabel>Headers</ControlLabel>
                             <MapEditor
@@ -125,8 +153,44 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
             )
         }
 
-        handleVariablesChange = ({value}) => {
+        updateAuthorization = () => {
+            const url = this.props.environment.get('url');
+            const email = this.props.environment.get('email');
+            const password = this.props.environment.get('password');
 
+            const variables = { data: { email, password }};
+            
+            request(url, gql`
+                mutation userLogin($data: UserLoginInput!) {
+                  userLogin(data: $data) {
+                    success
+                    auth {
+                      idToken
+                    }
+                    accounts {
+                      account
+                    }
+                  }
+                }
+            `, variables).then((data) => {
+                let headers = this.props.environment.get('headers');
+
+                headers = headers.set('authorization', data.userLogin.auth.idToken);
+                headers = headers.set('account-id', data.userLogin.accounts[0].account);
+
+                this.props.environmentsUpdate({
+                    id: this.props.environment.get('id'),
+                    data: {
+                        headers,
+                    }
+                });
+            }).catch((err) => {
+                console.log(err);
+                alert(JSON.stringify(err, null, 2));
+            });
+        }
+
+        handleVariablesChange = ({value}) => {
             this.props.environmentsUpdate({
                 id: this.props.environment.get('id'),
                 data: {
@@ -136,7 +200,6 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
         }
 
         handleHeadersChange = ({value}) => {
-
             this.props.environmentsUpdate({
                 id: this.props.environment.get('id'),
                 data: {
@@ -175,6 +238,25 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
             })
 
             this.refreshSchema(e.target.value)
+        }
+
+        handleEmailChange = e => {
+            this.props.environmentsUpdate({
+                id: this.props.environment.get('id'),
+                data: {
+                    email: e.target.value
+                }
+            })
+        }
+
+        handlePasswordChange = e => {
+
+            this.props.environmentsUpdate({
+                id: this.props.environment.get('id'),
+                data: {
+                    password: e.target.value
+                }
+            })
         }
 
         refreshSchema = (url) => {
