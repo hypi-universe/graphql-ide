@@ -43,7 +43,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1400,
         height: 800,
-        titleBarStyle: 'hidden-inset'
+        titleBarStyle: 'hiddenInset',
     })
 
     // and load the index.html of the app.
