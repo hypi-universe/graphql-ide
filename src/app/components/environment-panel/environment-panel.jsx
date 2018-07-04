@@ -21,6 +21,11 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
     const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch)
 
     class EnvironmentPanel extends React.Component {
+        constructor(props) {
+            super(props);
+
+            this.state = { authorizationUpdating: false };
+        }
 
         render() {
 
@@ -137,6 +142,13 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
                                     <a href="javascript:void(0)" onClick={this.updateAuthorization}>
                                         Refresh
                                     </a>
+                                    {
+                                        this.state.authorizationUpdating
+                                        &&
+                                        <span className="pull-right">
+                                            Updating...
+                                        </span>
+                                    }
                                 </div>
                             </div>
                         </FormGroup>
@@ -159,6 +171,9 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
             const password = this.props.environment.get('password');
 
             const variables = { data: { email, password }};
+
+
+            this.setState({ authorizationUpdating: true });
             
             request(url, gql`
                 mutation userLogin($data: UserLoginInput!) {
@@ -187,6 +202,8 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
             }).catch((err) => {
                 console.log(err);
                 alert(JSON.stringify(err, null, 2));
+            }).finally(() => {
+                this.setState({ authorizationUpdating: false });
             });
         }
 
