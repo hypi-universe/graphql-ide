@@ -1,32 +1,21 @@
 .graphiql-container {
-  color: #141823;
-  display:         flex;
+  color: $text-color;
+  display: flex;
   display: -webkit-flex;
   flex-direction: row;
   -webkit-flex-direction: row;
-  font-family:
-          system,
-          -apple-system,
-          'San Francisco',
-          '.SFNSDisplay-Regular',
-          'Segoe UI',
-          Segoe,
-          'Segoe WP',
-          'Helvetica Neue',
-          helvetica,
-          'Lucida Grande',
-          arial,
-          sans-serif;
+  font-family: system, -apple-system, 'San Francisco', '.SFNSDisplay-Regular', 'Segoe UI', Segoe, 'Segoe WP', 'Helvetica Neue', helvetica, 'Lucida Grande', arial, sans-serif;
   font-size: 14px;
   height: 100%;
   margin: 0;
   overflow: hidden;
   width: 100%;
+  //border: 1px solid $border-color;
 }
 
 .graphiql-container .editorWrap {
   display: -webkit-flex;
-  display:         flex;
+  display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
   -webkit-flex: 1;
@@ -45,7 +34,7 @@
 
 .graphiql-container .topBarWrap {
   display: -webkit-flex;
-  display:         flex;
+  display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
 }
@@ -57,7 +46,7 @@
   border-bottom: 1px solid $border-color;
   cursor: default;
   display: -webkit-flex;
-  display:         flex;
+  display: flex;
   height: 48px;
   padding: 7px 13px;
   -webkit-flex: 1;
@@ -101,7 +90,7 @@
 
 .graphiql-container .editorBar {
   display: -webkit-flex;
-  display:         flex;
+  display: flex;
   -webkit-flex: 1;
   flex: 1;
   -webkit-flex-direction: row;
@@ -110,7 +99,7 @@
 
 .graphiql-container .queryWrap {
   display: -webkit-flex;
-  display:         flex;
+  display: flex;
   -webkit-flex: 1;
   flex: 1;
   -webkit-flex-direction: column;
@@ -120,7 +109,7 @@
 .graphiql-container .resultWrap {
   border-left: solid 1px $border-color;
   display: -webkit-flex;
-  display:         flex;
+  display: flex;
   position: relative;
   -webkit-flex: 1;
   flex: 1;
@@ -136,6 +125,7 @@
 }
 
 .graphiql-container .docExplorerResizer {
+  background: rgba(255, 255, 255, 0.06);
   cursor: col-resize;
   height: 100%;
   left: -5px;
@@ -160,7 +150,7 @@
 
 .graphiql-container .variable-editor {
   display: -webkit-flex;
-  display:         flex;
+  display: flex;
   height: 29px;
   -webkit-flex-direction: column;
   flex-direction: column;
@@ -168,7 +158,7 @@
 }
 
 .graphiql-container .variable-editor-title {
-  background: #f0f0f0;
+  background: $background-color;
   border-bottom: 1px solid $border-color;
   border-top: 1px solid $border-color;
   color: #777;
@@ -213,11 +203,11 @@
 }
 
 .graphiql-container .result-window .CodeMirror {
-  background: #fafafa;
+  background: $background-color;
 }
 
 .graphiql-container .result-window .CodeMirror-gutters {
-  background-color: #f0f0f0;
+  background-color: #333333;
   border-color: $border-color;
   cursor: col-resize;
 }
@@ -262,7 +252,7 @@
 
 .graphiql-container .toolbar-button.error {
   background: -webkit-linear-gradient(#fdf3f3, #e6d6d7);
-  background:         linear-gradient(#fdf3f3, #e6d6d7);
+  background: linear-gradient(#fdf3f3, #e6d6d7);
   color: #b00;
 }
 
@@ -274,7 +264,7 @@
 
 .graphiql-container .execute-button {
   background: #f7f7f7;
-  border: 1px solid rgba(0,0,0,0.25);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 17px;
   cursor: pointer;
   fill: #444;
@@ -304,9 +294,8 @@
 
 .graphiql-container .execute-options {
   background: #fff;
-  box-shadow:
-          0 0 0 1px rgba(0,0,0,0.1),
-          0 2px 4px rgba(0,0,0,0.25);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
+  0 2px 4px rgba(0, 0, 0, 0.25);
   left: -1px;
   margin: 0;
   padding: 8px 0;
@@ -323,7 +312,7 @@
 }
 
 .graphiql-container .execute-options li.selected {
-  background: #e10098;
+  background: $theme-color;
   color: white;
 }
 
@@ -333,12 +322,11 @@
 
 .graphiql-container .CodeMirror {
   color: #141823;
-  font-family:
-          'Consolas',
-          'Inconsolata',
-          'Droid Sans Mono',
-          'Monaco',
-          monospace;
+  font-family: 'Consolas',
+  'Inconsolata',
+  'Droid Sans Mono',
+  'Monaco',
+  monospace;
   font-size: 13px;
   height: 100%;
   left: 0;
@@ -436,19 +424,18 @@ div.CodeMirror-lint-tooltip {
   border-radius: 2px;
   color: #141823;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
-  font-family:
-          system,
-          -apple-system,
-          'San Francisco',
-          '.SFNSDisplay-Regular',
-          'Segoe UI',
-          Segoe,
-          'Segoe WP',
-          'Helvetica Neue',
-          helvetica,
-          'Lucida Grande',
-          arial,
-          sans-serif;
+  font-family: system,
+  -apple-system,
+  'San Francisco',
+  '.SFNSDisplay-Regular',
+  'Segoe UI',
+  Segoe,
+  'Segoe WP',
+  'Helvetica Neue',
+  helvetica,
+  'Lucida Grande',
+  arial,
+  sans-serif;
   font-size: 13px;
   line-height: 16px;
   opacity: 0;
@@ -470,10 +457,9 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
   border-radius: 4px;
   background: #08f;
   background: -webkit-linear-gradient(#43A8FF, #0F83E8);
-  background:         linear-gradient(#43A8FF, #0F83E8);
-  box-shadow:
-          0 1px 1px rgba(0, 0, 0, 0.2),
-          inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(#43A8FF, #0F83E8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+  inset 0 0 0 1px rgba(0, 0, 0, 0.1);
   color: white;
   font-family: arial;
   font-size: 12px;
@@ -484,8 +470,9 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 }
 
 .graphiql-container div.CodeMirror span.CodeMirror-matchingbracket {
-  color: #555;
-  text-decoration: underline;
+  color: #ff00f3 !important;
+  text-decoration: none !important;
+  font-style: italic;
 }
 
 .graphiql-container div.CodeMirror span.CodeMirror-nonmatchingbracket {
@@ -499,22 +486,22 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 
 /* Punctuation */
 .cm-punctuation {
-  color: #555;
+  color: #b3b3b3;
 }
 
 /* Keyword */
 .cm-keyword {
-  color: #B11A04;
+  color: #ff9d00;
 }
 
 /* OperationName, FragmentName */
 .cm-def {
-  color: #D2054E;
+  color: #c54747;
 }
 
 /* FieldName */
 .cm-property {
-  color: #1F61A0;
+  color: #a3e175;
 }
 
 /* FieldAlias */
@@ -524,7 +511,7 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 
 /* ArgumentName and ObjectFieldName */
 .cm-attribute {
-  color: #8B2BB9;
+  color: #c678dd;
 }
 
 /* Number */
@@ -534,7 +521,7 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 
 /* String */
 .cm-string {
-  color: #D64292;
+  color: #b4b4b4;
 }
 
 /* Boolean */
@@ -549,7 +536,7 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 
 /* Variable */
 .cm-variable {
-  color: #397D13;
+  color: #30b7c7;
 }
 
 /* Directive */
@@ -559,5 +546,5 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 
 /* Type */
 .cm-atom {
-  color: #CA9800;
+  color: #ffe407;
 }

@@ -6,10 +6,12 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #f7f7f7;
   height: 47px;
-  border-bottom: 1px solid $border-color;
   padding: 14px 15px;
+  background-color: lighten($background-color, 2%);
+  color: $text-color;
+  //border: 1px solid $border-color;
+  //@include border-top-radius(3px);
   font-size: 14px;
   text-align: center;
   font-weight: 200;
@@ -21,7 +23,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #ffffff;
+  background-color: $background-color;
+  border-top: 1px solid $border-color;
+  color: $text-color;
   overflow-x: hidden;
   overflow-y: scroll;
   padding: 20px 15px;
@@ -36,7 +40,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #f7f7f7;
+  background-color: $background-color;
+  //border-top: 1px solid #d6d6d6;
+  color: $text-color;
   height: 47px;
   border-top: 1px solid $border-color;
   padding: 8px 15px;

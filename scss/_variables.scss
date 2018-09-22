@@ -1,1 +1,18 @@
-$border-color: #D4D4D4;
+@import "vendor/bootstrap/bootstrap/variables";
+@import "vendor/bootstrap/bootstrap/mixins";
+
+$theme-color: lighten($brand-primary, 5%);
+$text-color: lighten($brand-primary, 40%);
+$text-color-active: #a1c3ed;
+$border-color: #545454;
+$background-color: #282828;
+$background-active-color: #3a4961;
+
+$input-color-placeholder: $gray-light;
+$input-bg-disabled: lighten($background-color, 3%);
+$input-color: $text-color;
+$page-header-border-color: $gray-light;
+
+.label-primary {
+  @include label-variant($theme-color);
+}

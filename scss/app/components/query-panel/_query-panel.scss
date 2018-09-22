@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  background-color: #fafafa;
+  background-color: $background-color;
 }
 
 .QueryPanel__EmptyMessage {
@@ -21,14 +21,14 @@
   position: relative;
   display: block;
   margin-bottom: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: $background-color;
+  border: 1px solid $border-color;
   border-radius: 4px;
 }
 
 .QueryMetaItem {
   padding: 8px 15px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $border-color;
 
   &:last-of-type {
     border-bottom: 0;

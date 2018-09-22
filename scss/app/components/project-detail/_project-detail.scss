@@ -4,6 +4,8 @@
   right: 0;
   bottom: 0;
   left: 0;
+  background-color: $background-color;
+  color: $text-color;
 }
 
 .ProjectDetailContent {
@@ -28,7 +30,6 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  background-color: #fafafa;
 }
 
 .Workspace__EmptyMessage {
@@ -49,5 +50,5 @@
   position: absolute;
   top: 0;
   left: 0;
-  border-right: 1px solid $border-color;
+  //border-right: 1px solid $border-color;
 }
