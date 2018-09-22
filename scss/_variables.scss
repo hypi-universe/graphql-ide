@@ -7,6 +7,8 @@ $text-color-active: #a1c3ed;
 $border-color: #545454;
 $background-color: #282828;
 $background-active-color: #3a4961;
+$header-background-color: lighten($background-color, 2%);
+$editor-background-color: darken($background-color, 3%);
 
 $input-color-placeholder: $gray-light;
 $input-bg-disabled: lighten($background-color, 3%);
