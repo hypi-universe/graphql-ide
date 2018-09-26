@@ -70,7 +70,7 @@ export default (store) => {
                     click: get(delegate, 'edit.prettifyQuery.click')
                 }, {
                     label: get(delegate, 'edit.executeQuery.description'),
-                    accelerator: 'Command+E',
+                    accelerator: 'Command+Enter',
                     click: get(delegate, 'edit.executeQuery.click')
                 }, {
                     label: get(delegate, 'edit.saveQuery.description'),
