@@ -1,5 +1,6 @@
 .DocumentationPanel .doc-explorer {
-  background: #f7f7f7;
+  background: $header-background-color;
+  color: $text-color;
 }
 
 .DocumentationPanel .doc-explorer-title-bar {
@@ -27,7 +28,7 @@
 }
 
 .DocumentationPanel .doc-explorer-back {
-  color: #222222;
+  color: $text-color;
   cursor: pointer;
   margin: -7px 0 -6px -8px;
   overflow: hidden;
@@ -37,8 +38,8 @@
 }
 
 .DocumentationPanel .doc-explorer-back:before {
-  border-left: 2px solid #222222;
-  border-top: 2px solid #222222;
+  border-left: 2px solid $gray-lighter;
+  border-top: 2px solid $gray-lighter;
   content: '';
   display: inline-block;
   height: 9px;
@@ -54,7 +55,7 @@
 }
 
 .DocumentationPanel .doc-explorer-contents {
-  background-color: #ffffff;
+  background-color: $background-color;
   border-top: 1px solid $border-color;
   bottom: 0;
   left: 0;
@@ -104,11 +105,11 @@
 
 .DocumentationPanel .doc-category-item {
   margin: 12px 0;
-  color: #555;
+  color: #d6d6d6;
 }
 
 .DocumentationPanel .keyword {
-  color: #B11A04;
+  color: #FF5442;
 }
 
 .DocumentationPanel .type-name {
@@ -116,7 +117,7 @@
 }
 
 .DocumentationPanel .field-name {
-  color: #1F61A0;
+  color: #488aca;
 }
 
 .DocumentationPanel .value-name {
@@ -124,7 +125,7 @@
 }
 
 .DocumentationPanel .arg-name {
-  color: #8B2BB9;
+  color: #d168ff;
 }
 
 .DocumentationPanel .arg:after {
@@ -142,7 +143,8 @@
 }
 
 .DocumentationPanel .search-box-outer {
-  border: 1px solid #d3d6db;
+  border: 1px solid $border-color;
+  border-radius: 3px;
   box-sizing: border-box;
   display: inline-block;
   font-size: 12px;
@@ -154,6 +156,7 @@
 }
 
 .DocumentationPanel .search-box-input {
+  background: $background-color;
   border: 0;
   font-size: 12px;
   margin: 0;

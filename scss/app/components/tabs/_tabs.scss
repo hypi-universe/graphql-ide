@@ -1,35 +1,47 @@
+
 .Tabs {
   width: 100%;
   height: 34px;
-  background: #d0d0d0;
+  background: $background-color;
+  //border-top: 1px solid $border-color;
+  color: $text-color;
   overflow: hidden;
   border-radius: 0;
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  border-bottom: 1px solid #b4b4b4;
+  border-bottom: 1px solid $border-color;
 }
 
 .TabElement {
   position: relative;
   display: inline-block;
-  background-color: #d0d0d0;
-  color: #222222;
+  background-color: $background-color;
+  color: $text-color;
   padding: 9px 10px;
   margin: 0;
   font-size: 11px;
   transition: background-color 50ms ease-in-out;
   align-items: center;
   cursor: pointer;
-  border-right: 1px solid #b4b4b4;
+  border-top: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+
+  &:first-child {
+    border-left: 1px solid $border-color;
+  }
 
   &:hover {
-    background-color: #f2f2f2;
+    background-color: lighten($background-color, 5%);
   }
 
   &.active {
-    background-color: #f2f2f2;
+    background-color: $background-active-color;
+    color: $text-color-active;
+    font-weight: bold;
   }
 }
 
@@ -39,13 +51,13 @@
 
   &:hover {
     .Title {
-      background-color: #f2f2f2;
+      background-color: lighten($background-color, 5%);
     }
   }
 
   &.active {
     .Title {
-      background-color: #f2f2f2;
+      background-color: $background-active-color;
     }
   }
 
@@ -64,7 +76,7 @@
     transition: transform 80ms;
 
     &:hover {
-      background-color: #E10098;
+      background-color: $theme-color;
 
       &:before {
         color: #ffffff;
@@ -103,7 +115,7 @@
     border-bottom: 1px solid transparent;
     text-overflow: clip;
     -webkit-mask: linear-gradient(to left, rgba(0, 0, 0, 0), #000000 1em) no-repeat;
-    background-color: #d0d0d0;
+    background-color: $background-color;
     background-clip: content-box;
     backface-visibility: hidden;
     transition: background-color 50ms ease-in-out;
@@ -112,6 +124,8 @@
 }
 
 .TabAddButton {
+  border-left: 1px solid $border-color;
+  margin-left: 2px;
 
   .add-icon {
     position: absolute;

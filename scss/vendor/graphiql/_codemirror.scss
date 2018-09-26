@@ -24,7 +24,7 @@
 
 .CodeMirror-gutters {
   border-right: 1px solid $border-color;
-  background-color: #fafafa;
+  background-color: $background-color;
   white-space: nowrap;
 }
 .CodeMirror-linenumbers {}
@@ -42,7 +42,7 @@
 /* CURSOR */
 
 .CodeMirror div.CodeMirror-cursor {
-  border-left: 1px solid black;
+  border-left: 2px solid #ffef00 !important;
 }
 /* Shown when moving in bi-directional text */
 .CodeMirror div.CodeMirror-secondarycursor {
@@ -143,7 +143,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
 .CodeMirror {
   position: relative;
   overflow: hidden;
-  background: white;
+  //background: $background-color;
 }
 
 .CodeMirror-scroll {
@@ -304,8 +304,12 @@ div.CodeMirror-dragcursors {
   visibility: visible;
 }
 
-.CodeMirror-selected { background: #d9d9d9; }
-.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }
+.CodeMirror-selected {
+  background: rgba(177, 177, 177, 0.3);
+}
+.CodeMirror-focused .CodeMirror-selected {
+  background: rgba(177, 177, 177, 0.2);
+}
 .CodeMirror-crosshair { cursor: crosshair; }
 .CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }
 .CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }
