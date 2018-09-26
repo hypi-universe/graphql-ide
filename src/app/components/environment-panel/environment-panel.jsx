@@ -174,24 +174,24 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
 
 
             this.setState({ authorizationUpdating: true });
-            
+
             request(url, gql`
                 mutation userLogin($data: UserLoginInput!) {
                     userLogin(data: $data) {
-                      success
-                      auth {
-                        idToken
-                      }
-                      accounts {
-                        account
-                      }
+                        success
+                        auth {
+                            idToken
+                        }
+                        workspaces {
+                            workspace
+                        }
                     }
                 }
             `, variables).then((data) => {
                 let headers = this.props.environment.get('headers');
 
                 headers = headers.set('authorization', data.userLogin.auth.idToken);
-                headers = headers.set('account-id', data.userLogin.accounts[0].account);
+                headers = headers.set('workspace', data.userLogin.workspaces[0].workspace);
 
                 this.props.environmentsUpdate({
                     id: this.props.environment.get('id'),
