@@ -70,8 +70,8 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
                                     <FormControl
                                         ref="url"
                                         type="text"
-                                        value={this.props.environment.get('url')}
-                                        placeholder="Enter a url"
+                                        value={this.props.environment.get('url') || 'https://api.hypi.app/graphql'}
+                                        placeholder="Hypi API URL typically https://api.hypi.app/graphql"
                                         onChange={this.handleUrlChange}
                                     />
                                 </div>
@@ -117,15 +117,24 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
                                 onChange={this.handleVariablesChange}
                             />
                         </FormGroup>
-                        <FormGroup controlId="8base">
-                            <ControlLabel>8base</ControlLabel>
+                        <FormGroup controlId="hypi">
+                            <ControlLabel>Hypi Account</ControlLabel>
                             <div className="UrlEditor">
+                            <div className="UrlEditorSection">
+                                    <FormControl
+                                        ref="url"
+                                        type="text"
+                                        value={this.props.environment.get('realm')}
+                                        placeholder="Hypi realm"
+                                        onChange={this.handleRealmChange}
+                                    />
+                                </div>
                                 <div className="UrlEditorSection">
                                     <FormControl
                                         ref="url"
                                         type="text"
                                         value={this.props.environment.get('email')}
-                                        placeholder="Enter an email"
+                                        placeholder="Email or username"
                                         onChange={this.handleEmailChange}
                                     />
                                 </div>
@@ -154,6 +163,8 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
                         </FormGroup>
                         <FormGroup>
                             <ControlLabel>Headers</ControlLabel>
+                            <ControlLabel>hypi-domain and Authorization are required</ControlLabel>
+                            <ControlLabel>hypi-domain and hypi-realm are required if login in</ControlLabel>
                             <MapEditor
                                 value={this.props.environment.get('headers')}
                                 noContentMessage="No headers (yet)"
@@ -167,23 +178,25 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
 
         updateAuthorization = () => {
             const url = this.props.environment.get('url');
+            const realm = this.props.environment.get('realm');
             const email = this.props.environment.get('email');
             const password = this.props.environment.get('password');
 
-            const variables = { data: { email, password }};
+            const variables = { arcql: `(emails.value = '${email}' OR username = '${email}') AND password = '${password}'`};
 
 
             this.setState({ authorizationUpdating: true });
 
             request(url, gql`
-                mutation userLogin($data: UserLoginInput!) {
-                    userLogin(data: $data) {
-                        success
-                        auth {
-                            idToken
-                        }
-                        workspaces {
-                            workspace
+                query findAccount($arcql: String!) {
+                    findAccount(arcql: $arcql) {
+                        sessionToken
+                        hypi{id}
+                        owner{
+                            name{
+                                firstName
+                                lastName
+                            }
                         }
                     }
                 }
@@ -262,6 +275,15 @@ export default ({actionCreators, selectors, queries, MapEditor, Panel, PanelHead
                 id: this.props.environment.get('id'),
                 data: {
                     email: e.target.value
+                }
+            })
+        }
+
+        handleRealmChange = e => {
+            this.props.environmentsUpdate({
+                id: this.props.environment.get('id'),
+                data: {
+                    realm: e.target.value
                 }
             })
         }

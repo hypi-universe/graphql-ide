@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="8base GraphQL IDE" src="https://rawgit.com/redound/graphql-ide/cbb88aa/assets/logo.svg" width="440">
+    <img alt="Hypi GraphQL IDE" src="https://rawgit.com/redound/graphql-ide/cbb88aa/assets/logo.svg" width="440">
 </p>
 
 <p align="center">
