@@ -8,7 +8,8 @@
   right: 0;
   height: 47px;
   padding: 14px 15px;
-  background-color: $header-background-color;
+  background-color: #f7f7f7;
+  // background-color: $header-background-color;
   color: $text-color;
   //border: 1px solid $border-color;
   //@include border-top-radius(3px);
@@ -23,7 +24,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: $background-color;
+  background-color: #ffffff;
+  // background-color: $background-color;
   border-top: 1px solid $border-color;
   color: $text-color;
   overflow-x: hidden;
@@ -40,7 +42,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: $background-color;
+  background-color: #f7f7f7;
+  // background-color: $background-color;
   //border-top: 1px solid #d6d6d6;
   color: $text-color;
   height: 47px;

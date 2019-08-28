@@ -2,18 +2,18 @@
   position: relative;
   display: block;
   margin-bottom: 20px;
-  background-color: $background-color;
-  border: 1px solid $border-color;
+  background-color: #fff; //$background-color;
+  border: 1px solid #ddd; //$border-color;
   border-radius: 4px;
 }
 
 .UrlEditorSection {
-  background-color: $background-color;
-  border-bottom: 1px solid $border-color;
+  background-color: #fff; //$background-color;
+  border-bottom: 1px solid #ddd; //$border-color;
   padding: 15px;
 }
 
 .UrlEditorFooter {
-  background-color: $header-background-color;
+  // background-color: $header-background-color;
   padding: 15px;
 }

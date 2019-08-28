@@ -1,10 +1,22 @@
 .graphiql-container {
-  color: $text-color;
+  color: #141823;
   display: flex;
-  display: -webkit-flex;
   flex-direction: row;
   -webkit-flex-direction: row;
-  font-family: system, -apple-system, 'San Francisco', '.SFNSDisplay-Regular', 'Segoe UI', Segoe, 'Segoe WP', 'Helvetica Neue', helvetica, 'Lucida Grande', arial, sans-serif;
+  // font-family: system, -apple-system, 'San Francisco', '.SFNSDisplay-Regular', 'Segoe UI', Segoe, 'Segoe WP', 'Helvetica Neue', helvetica, 'Lucida Grande', arial, sans-serif;
+  font-family:
+          system,
+          -apple-system,
+          'San Francisco',
+          '.SFNSDisplay-Regular',
+          'Segoe UI',
+          Segoe,
+          'Segoe WP',
+          'Helvetica Neue',
+          helvetica,
+          'Lucida Grande',
+          arial,
+          sans-serif;
   font-size: 14px;
   height: 100%;
   margin: 0;
@@ -126,7 +138,6 @@
 }
 
 .graphiql-container .docExplorerResizer {
-  background: rgba(255, 255, 255, 0.06);
   cursor: col-resize;
   height: 100%;
   left: -5px;
@@ -159,7 +170,7 @@
 }
 
 .graphiql-container .variable-editor-title {
-  background: $background-color;
+  background: #f0f0f0;
   border-bottom: 1px solid $border-color;
   border-top: 1px solid $border-color;
   color: #777;
@@ -205,10 +216,11 @@
 
 .graphiql-container .result-window .CodeMirror {
   //background: $background-color;
+  background: #fafafa;
 }
 
 .graphiql-container .result-window .CodeMirror-gutters {
-  background-color: #333333;
+  background-color: #f0f0f0;
   border-color: $border-color;
   cursor: col-resize;
 }
@@ -313,7 +325,7 @@
 }
 
 .graphiql-container .execute-options li.selected {
-  background: $theme-color;
+  background: #e10098;
   color: white;
 }
 
@@ -323,11 +335,12 @@
 
 .graphiql-container .CodeMirror {
   color: #141823;
-  font-family: 'Consolas',
-  'Inconsolata',
-  'Droid Sans Mono',
-  'Monaco',
-  monospace;
+  font-family:
+          'Consolas',
+          'Inconsolata',
+          'Droid Sans Mono',
+          'Monaco',
+          monospace;
   font-size: 13px;
   height: 100%;
   left: 0;
@@ -425,18 +438,19 @@ div.CodeMirror-lint-tooltip {
   border-radius: 2px;
   color: #141823;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
-  font-family: system,
-  -apple-system,
-  'San Francisco',
-  '.SFNSDisplay-Regular',
-  'Segoe UI',
-  Segoe,
-  'Segoe WP',
-  'Helvetica Neue',
-  helvetica,
-  'Lucida Grande',
-  arial,
-  sans-serif;
+  font-family:
+          system,
+          -apple-system,
+          'San Francisco',
+          '.SFNSDisplay-Regular',
+          'Segoe UI',
+          Segoe,
+          'Segoe WP',
+          'Helvetica Neue',
+          helvetica,
+          'Lucida Grande',
+          arial,
+          sans-serif;
   font-size: 13px;
   line-height: 16px;
   opacity: 0;
@@ -471,8 +485,10 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 }
 
 .graphiql-container div.CodeMirror span.CodeMirror-matchingbracket {
-  color: #ff00f3 !important;
-  text-decoration: none !important;
+  color: #555;
+  text-decoration: underline;
+  // color: #ff00f3 !important;
+  // text-decoration: none !important;
   font-style: italic;
 }
 
@@ -487,22 +503,22 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 
 /* Punctuation */
 .cm-punctuation {
-  color: #b3b3b3;
+  color: #555;
 }
 
 /* Keyword */
 .cm-keyword {
-  color: #ff9d00;
+  color: #B11A04;
 }
 
 /* OperationName, FragmentName */
 .cm-def {
-  color: #c54747;
+  color: #D2054E;
 }
 
 /* FieldName */
 .cm-property {
-  color: #a3e175;
+  color: #1F61A0;
 }
 
 /* FieldAlias */
@@ -512,7 +528,7 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 
 /* ArgumentName and ObjectFieldName */
 .cm-attribute {
-  color: #c678dd;
+  color: #8B2BB9;
 }
 
 /* Number */
@@ -522,7 +538,7 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 
 /* String */
 .cm-string {
-  color: #b4b4b4;
+  color: #D64292;
 }
 
 /* Boolean */
@@ -537,7 +553,7 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 
 /* Variable */
 .cm-variable {
-  color: #30b7c7;
+  color: #397D13;
 }
 
 /* Directive */
@@ -547,5 +563,5 @@ div.CodeMirror-lint-message-error, div.CodeMirror-lint-message-warning {
 
 /* Type */
 .cm-atom {
-  color: #ffe407;
+  color: #CA9800;
 }

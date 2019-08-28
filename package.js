@@ -55,6 +55,7 @@ function startPack() {
         if (err) return console.error(err)
         del('release')
             .then(function (paths) {
+                console.log('Building all platform = ' + shouldBuildAll);
                 if (shouldBuildAll) {
                     // build for all platforms
                     var archs = ['ia32', 'x64']

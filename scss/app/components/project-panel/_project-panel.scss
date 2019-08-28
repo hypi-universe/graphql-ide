@@ -2,14 +2,18 @@
   position: relative;
   display: block;
   margin-bottom: 20px;
-  background-color: $background-color;
-  border-bottom: 1px solid $border-color;
+  // background-color: $background-color;
+  // border-bottom: 1px solid $border-color;
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 4px;
 }
 
 .EnvironmentItem {
-  background-color: $background-color;
-  border-bottom: 1px solid $border-color;
+  // background-color: $background-color;
+  // border-bottom: 1px solid $border-color;
+  background-color: #fff;
+  border: 1px solid #ddd;
   padding: 15px;
 }
 

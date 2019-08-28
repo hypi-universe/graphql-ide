@@ -1,13 +1,13 @@
 @import "vendor/bootstrap/bootstrap/variables";
 @import "vendor/bootstrap/bootstrap/mixins";
 
-$theme-color: lighten($brand-primary, 5%);
-$text-color: lighten($brand-primary, 40%);
-$text-color-active: #a1c3ed;
-$border-color: #545454;
-$background-color: #282828;
-$background-active-color: #3a4961;
-$header-background-color: lighten($background-color, 2%);
+$theme-color: #E10098; //lighten($brand-primary, 45%);
+$text-color: rgb(48, 48, 48);
+$text-color-active: #000000;
+$border-color: #D4D4D4;
+$background-color: #fafafa;
+$background-active-color: #536685;
+$header-background-color: $gray-darker; //lighten($background-color, 2%);
 $editor-background-color: darken($background-color, 3%);
 
 $input-color-placeholder: $gray-light;

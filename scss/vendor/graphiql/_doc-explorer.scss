@@ -1,6 +1,5 @@
 .DocumentationPanel .doc-explorer {
-  background: $header-background-color;
-  color: $text-color;
+  background: #f7f7f7;
 }
 
 .DocumentationPanel .doc-explorer-title-bar {
@@ -28,7 +27,7 @@
 }
 
 .DocumentationPanel .doc-explorer-back {
-  color: $text-color;
+  color: #222222;
   cursor: pointer;
   margin: -7px 0 -6px -8px;
   overflow: hidden;
@@ -38,8 +37,8 @@
 }
 
 .DocumentationPanel .doc-explorer-back:before {
-  border-left: 2px solid $gray-lighter;
-  border-top: 2px solid $gray-lighter;
+  border-left: 2px solid #222222;
+  border-top: 2px solid #222222;
   content: '';
   display: inline-block;
   height: 9px;
@@ -55,7 +54,7 @@
 }
 
 .DocumentationPanel .doc-explorer-contents {
-  background-color: $background-color;
+  background-color: #ffffff;
   border-top: 1px solid $border-color;
   bottom: 0;
   left: 0;
@@ -105,11 +104,11 @@
 
 .DocumentationPanel .doc-category-item {
   margin: 12px 0;
-  color: #d6d6d6;
+  color: #555;
 }
 
 .DocumentationPanel .keyword {
-  color: #FF5442;
+  color: #B11A04;
 }
 
 .DocumentationPanel .type-name {
@@ -117,7 +116,7 @@
 }
 
 .DocumentationPanel .field-name {
-  color: #488aca;
+  color: #1F61A0;
 }
 
 .DocumentationPanel .value-name {
@@ -143,8 +142,7 @@
 }
 
 .DocumentationPanel .search-box-outer {
-  border: 1px solid $border-color;
-  border-radius: 3px;
+  border: 1px solid #d3d6db;
   box-sizing: border-box;
   display: inline-block;
   font-size: 12px;
@@ -156,7 +154,6 @@
 }
 
 .DocumentationPanel .search-box-input {
-  background: $background-color;
   border: 0;
   font-size: 12px;
   margin: 0;
